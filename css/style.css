@@ -1,0 +1,349 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #7e65da 30%, #a528db 54%);
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.info-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 3em;
+  border-radius: 10px;
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #7e65da 30%, #a528db 54%);
+  z-index: 2;
+}
+.info-modal .text-area h1,
+.info-modal .text-area p {
+  color: white;
+  padding: 0.5em;
+}
+.info-modal .text-area h1 {
+  font-size: 4rem;
+}
+.info-modal .text-area p {
+  font-size: 2.4rem;
+}
+.info-modal .text-area .close-modal {
+  margin-top: 1em;
+  font-size: 2rem;
+  padding: 0.5em 3em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  background-color: rgb(190, 3, 247);
+  color: white;
+  cursor: pointer;
+}
+.info-modal .text-area .close-modal:hover {
+  background-color: rgb(155, 1, 202);
+}
+
+.app-area {
+  display: flex;
+  align-items: center;
+  gap: 5em;
+}
+.app-area .calculator-area {
+  height: 608px;
+  width: 345px;
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #a13efd 50%, #a212db 94%);
+  border-radius: 10px;
+  border: 3px inset #b908ff;
+  box-shadow: 0 0 20px black;
+  transition: animation 0.3s;
+}
+.app-area .calculator-area .app-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+  font-size: 1.5rem;
+}
+.app-area .calculator-area .app-title h1 {
+  color: white;
+}
+.app-area .calculator-area .calculator-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  padding-top: 2em;
+}
+.app-area .calculator-area .calculator-body .top {
+  height: 105px;
+  width: 100%;
+  background-color: #6e72fc;
+  background-image: linear-gradient(335deg, #902cd3 0%, #9636e4 90%);
+  margin-bottom: 0.5em;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.app-area .calculator-area .calculator-body .top .calculations-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 1em;
+  overflow: hidden;
+}
+.app-area .calculator-area .calculator-body .top .calculations-area .current-number,
+.app-area .calculator-area .calculator-body .top .calculations-area .last-number,
+.app-area .calculator-area .calculator-body .top .calculations-area .sign {
+  height: 35px;
+}
+.app-area .calculator-area .calculator-body .top .calculations-area .current-number {
+  color: white;
+  font-size: 3.5rem;
+  margin-top: -0.2em;
+}
+.app-area .calculator-area .calculator-body .top .calculations-area .last-number,
+.app-area .calculator-area .calculator-body .top .calculations-area .sign {
+  font-size: 1.6rem;
+  color: rgb(216, 213, 213);
+  font-weight: bold;
+}
+.app-area .calculator-area .calculator-body .top .calculations-area .last-number {
+  padding-top: 0.5em;
+}
+.app-area .calculator-area .calculator-body .row-1,
+.app-area .calculator-area .calculator-body .row-2,
+.app-area .calculator-area .calculator-body .row-3,
+.app-area .calculator-area .calculator-body .row-4,
+.app-area .calculator-area .calculator-body .row-5 {
+  margin-top: 0.2em;
+}
+.app-area .calculator-area .calculator-body button {
+  font-size: 2rem;
+  height: 4em;
+  width: 4em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(65, 13, 100, 0.8274509804);
+  cursor: pointer;
+  transition: background-color 0.3, animation 0.3s;
+}
+.app-area .calculator-area .calculator-body button:hover {
+  background-color: rgba(79, 17, 121, 0.8274509804);
+}
+.app-area .calculator-area .calculator-body .btns-animation {
+  animation: buttons-animation 10s infinite;
+}
+@keyframes buttons-animation {
+  0% {
+    box-shadow: 0 0 6px rgba(65, 13, 100, 0.8274509804);
+  }
+  25% {
+    box-shadow: 0 0 6px white;
+  }
+  50% {
+    box-shadow: 0 0 6px rgba(65, 13, 100, 0.8274509804);
+  }
+  75% {
+    box-shadow: 0 0 6px white;
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(65, 13, 100, 0.8274509804);
+  }
+}
+.app-area .calculator-animation {
+  animation: calculator-animation 10s infinite;
+}
+@keyframes calculator-animation {
+  0% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+  25% {
+    box-shadow: 0 0 25px white;
+    border: 3px inset #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+  75% {
+    box-shadow: 0 0 25px white;
+    border: 3px inset #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+}
+.app-area .last-calc-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 608px;
+  width: 280px;
+  box-shadow: 0 0 20px black;
+  border: 3px inset #b908ff;
+  border-radius: 8px;
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #a13efd 50%, #a212db 94%);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.app-area .last-calc-body p {
+  margin-top: 1em;
+  color: white;
+  border-bottom: 2px solid whitesmoke;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+.app-area .last-calc-body .clear-history {
+  padding: 0.8em 0.8em;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  font-size: 1.5rem;
+  border: none;
+  background-color: rgba(65, 13, 100, 0.8274509804);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3;
+}
+.app-area .last-calc-body .clear-history:hover {
+  background-color: rgba(79, 17, 121, 0.8274509804);
+}
+.app-area .last-calc-body .last-calculations-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app-area .last-calc-body .last-calculations-area span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.4em;
+}
+.app-area .last-calc-body .last-calculations-area .active-span {
+  border-bottom: 1px solid whitesmoke;
+}
+
+.panel-control {
+  position: absolute;
+  transform: translate(185%, -300%);
+  padding: 1em;
+  box-shadow: 0 0 20px black;
+  border: 3px inset #b908ff;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #6e72fc;
+  background-image: linear-gradient(315deg, #a13efd 50%, #a212db 94%);
+  cursor: grab;
+  z-index: 1;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.panel-control h2 {
+  font-size: 2.2rem;
+  border-bottom: 2px solid white;
+  color: white;
+}
+.panel-control .btn-area {
+  display: flex;
+  justify-content: space-around;
+}
+.panel-control .btn-area .btn-calculator,
+.panel-control .btn-area .btn-calculations,
+.panel-control .btn-area .btn-panel,
+.panel-control .btn-area .btn-all {
+  margin-top: 0.5em;
+  font-size: 2.2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, animation 0.3s;
+}
+.panel-control .btn-area p {
+  padding-top: 0.5em;
+  font-size: 1.4rem;
+  color: white;
+}
+.panel-control .btn-area .btn-calculator:hover,
+.panel-control .btn-area .btn-calculations:hover,
+.panel-control .btn-area .btn-panel:hover,
+.panel-control .btn-area .btn-all:hover {
+  color: rgb(214, 141, 248);
+}
+.panel-control .btn-area .active-control-btn {
+  animation: active-control-animation 5s infinite;
+}
+@keyframes active-control-animation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgb(214, 141, 248);
+  }
+  100% {
+    color: white;
+  }
+}
+
+.panel-control-animation {
+  animation: panel-control-animation 10s infinite;
+}
+@keyframes panel-control-animation {
+  0% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+  25% {
+    box-shadow: 0 0 25px white;
+    border: 3px inset #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+  75% {
+    box-shadow: 0 0 25px white;
+    border: 3px inset #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 25px black;
+    border: 3px inset #b908ff;
+  }
+}/*# sourceMappingURL=style.css.map */

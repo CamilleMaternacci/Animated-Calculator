@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/78eebef08c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="shadow"></div>
+
+    <div class="info-modal">
+        <div class="text-area">
+            <h1>Welcome in Animated Calculator Application</h1>
+            <p>Application has three panels:
+                <br><br>1. <strong>Animation Control Panel</strong> - you can enable or disable the animation of
+                individual or all panels.
+                <br><br>2. <strong>Last Calculations Panel</strong> - This is where the last results of the actions
+                performed are stored. You can clear the history by clicking on the button.
+                <br><br>3. <strong>Animated Calculator Panel</strong> - The calculator is for your use. I hope it will
+                help you in your work <i class="fa-regular fa-face-smile-beam"></i>
+                <br><br><strong>Move Animation Control Panel</strong> <i class="fa-solid fa-hand-sparkles"></i> - you
+                can move the panel according to your needs!
+            </p>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <div class="panel-control">
+        <h2>Animation Panel Control</h2>
+        <div class="btn-area">
+            <div class="calculator-btn">
+                <button class="btn-calculator"><i class="fa-solid fa-power-off"></i></button>
+                <p>Calc</p>
+            </div>
+            <div class="calculations-btn">
+                <button class="btn-calculations"><i class="fa-solid fa-power-off"></i></button>
+                <p>Last</p>
+            </div>
+            <div class="panel-btn">
+                <button class="btn-panel"><i class="fa-solid fa-power-off"></i></button>
+                <p>Panel</p>
+            </div>
+            <div class="all-btns">
+                <button class="btn-all"><i class="fa-solid fa-power-off"></i></button>
+                <p>All</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-area">
+
+        <div class="last-calc-body">
+            <p>Last Calculations</p>
+            <button class="clear-history">Clear History</button>
+            <div class="last-calculations-area">
+                <span class="last-calculation"></span>
+            </div>
+        </div>
+        <div class="calculator-area">
+            <div class="app-title">
+                <h1>Animated Calculator <i class="fa-solid fa-calculator"></i></h1>
+            </div>
+            <div class="calculator-body">
+                <div class="top">
+                    <div class="calculations-area">
+                        <p class="last-number"></p>
+                        <p class="sign"></p>
+                        <p class="current-number"></p>
+                    </div>
+                </div>
+                <div class="row-1">
+                    <button class="ac" id="btns-calc">AC</button>
+                    <button class="operators" id="btns-calc">x²</button>
+                    <button class="operators" id="btns-calc">/</button>
+                    <button class="operators" id="btns-calc">x</button>
+                </div>
+                <div class="row-2">
+                    <button class="numbers" id="btns-calc">7</button>
+                    <button class="numbers" id="btns-calc">8</button>
+                    <button class="numbers" id="btns-calc">9</button>
+                    <button class="operators" id="btns-calc">-</button>
+                </div>
+                <div class="row-3">
+                    <button class="numbers" id="btns-calc">4</button>
+                    <button class="numbers" id="btns-calc">5</button>
+                    <button class="numbers" id="btns-calc">6</button>
+                    <button class="operators" id="btns-calc">+</button>
+                </div>
+                <div class="row-4">
+                    <button class="numbers" id="btns-calc">1</button>
+                    <button class="numbers" id="btns-calc">2</button>
+                    <button class="numbers" id="btns-calc">3</button>
+                    <button class="equals" id="btns-calc">=</button>
+                </div>
+                <div class="row-5">
+                    <button class="numbers" id="btns-calc">0</button>
+                    <button class="numbers" id="btns-calc">00</button>
+                    <button class="numbers" id="btns-calc">.</button>
+                    <button class="delete-one" id="btns-calc"><i class="fa-solid fa-delete-left"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
